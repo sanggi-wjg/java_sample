@@ -1,4 +1,4 @@
-package CheatSheet;
+package cheat.sheet;
 
 public class PrintFormatSample {
 

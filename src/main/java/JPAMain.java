@@ -1,15 +1,16 @@
 
-import javax.persistence.EntityManager;
-import javax.persistence.EntityManagerFactory;
-import javax.persistence.Persistence;
+
+import jpa.sample.JPASample_3;
+
 
 public class JPAMain {
 
     public static void main(String[] args) {
-        EntityManagerFactory factory = Persistence.createEntityManagerFactory("hello");
-        EntityManager manager = factory.createEntityManager();
 
-        manager.close();
-        factory.close();
+        JPASample_3 sample = new JPASample_3();
+        sample.sample_1();
+
     }
+
+
 }

@@ -1,4 +1,4 @@
-package CheatSheet;
+package cheat.sheet;
 
 import java.util.ArrayList;
 import java.util.HashMap;

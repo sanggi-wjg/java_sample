@@ -1,4 +1,4 @@
-package CheatSheet;
+package cheat.sheet;
 
 import java.util.Arrays;
 
