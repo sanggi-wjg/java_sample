@@ -1,4 +1,4 @@
-package cheat.sheet.sample;
+package cheat.sheet.sample.classs;
 
 public class ClassSample {
 
@@ -27,7 +27,7 @@ public class ClassSample {
     }
 
     public void setAge(int age) throws Exception {
-        if (age < 0  || age > 100){
+        if (age < 0 || age > 100) {
             throw new Exception("invalid age");
         }
         this.age = age;
