@@ -1,13 +1,13 @@
+package jpa.sample;
 
-
-import jpa.sample.JPASample_3;
+import jpa.sample.sample.JPASample3;
 
 
 public class JPAMain {
 
     public static void main(String[] args) {
 
-        JPASample_3 sample = new JPASample_3();
+        JPASample3 sample = new JPASample3();
         sample.sample_1();
 
     }

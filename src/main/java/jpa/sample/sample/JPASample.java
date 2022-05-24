@@ -1,6 +1,6 @@
-package jpa.sample;
+package jpa.sample.sample;
 
-import jpa.sample.model.Member;
+import jpa.sample.sample.model.Member;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

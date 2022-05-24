@@ -1,4 +1,4 @@
-package jpa.sample.model;
+package jpa.sample.sample.model;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;

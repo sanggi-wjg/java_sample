@@ -1,4 +1,4 @@
-package cheat.sheet;
+package cheat.sheet.sample;
 
 public class ClassSample {
 
