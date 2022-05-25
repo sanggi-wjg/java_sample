@@ -1,4 +1,4 @@
-package cheat.sheet.sample;
+package cheat.sheet.sample.innerclass;
 
 public class InnerClassSample {
 
