@@ -1,13 +1,65 @@
 package cheat.sheet.sample.streams;
 
+import lombok.Getter;
+import lombok.Setter;
 import org.apache.commons.lang3.time.StopWatch;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.OptionalDouble;
 import java.util.stream.Stream;
 
+
+@Getter
+@Setter
+class Something {
+
+    private String name;
+    private int age;
+    private Sex sex;
+
+    public Something(String name, int age, Sex sex) {
+        this.name = name;
+        this.age = age;
+        this.sex = sex;
+    }
+}
+
+enum Sex {
+    MALE, FEMALE
+}
+
 public class ArrayListStreamSample {
+
+    public void parallel_sample_2() {
+        ArrayList<Something> somethings = new ArrayList<>(Arrays.asList(
+                new Something("Snow", 10, Sex.MALE), new Something("John", 20, Sex.MALE),
+                new Something("Test", 30, Sex.FEMALE), new Something("What", 40, Sex.FEMALE)
+        ));
+
+        somethings.stream().parallel().forEach(s -> {
+            String name = s.getName();
+            int age = s.getAge();
+            System.out.println("name = " + name + ",  age = " + age);
+            System.out.println("Thread id = " + Thread.currentThread().getId() + "  Thread name = " + Thread.currentThread().getName());
+        });
+        System.out.println("====================================================");
+
+        OptionalDouble average = somethings.stream().mapToInt(Something::getAge).average();
+        average.ifPresent(n -> {
+            System.out.println("average = " + n);
+        });
+
+        double sum = somethings.stream().mapToDouble(Something::getAge).sum();
+        System.out.println("sum = " + sum);
+
+        double femaleSum = somethings.stream().filter(n -> n.getSex().equals(Sex.FEMALE)).mapToDouble(Something::getAge).sum();
+        System.out.println("femaleSum = " + femaleSum);
+
+
+    }
+
 
     public void int_sample() {
         ArrayList<Integer> list = new ArrayList<>(Arrays.asList(1, 2, 3, 4, 5, 6));
