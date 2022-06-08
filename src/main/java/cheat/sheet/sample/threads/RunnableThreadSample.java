@@ -2,19 +2,20 @@ package cheat.sheet.sample.threads;
 
 public class RunnableThreadSample implements Runnable {
 
-    String myThreadName;
+    String threadName;
+    SomethingVO somethingVO;
 
-    public RunnableThreadSample(String name) {
-        this.myThreadName = name;
+    public RunnableThreadSample(int threadNumber, SomethingVO somethingVO) {
+        this.threadName = "Thread-" + Integer.toString(threadNumber);
+        this.somethingVO = somethingVO;
     }
 
     @Override
     public void run() {
-        try {
-            Thread.sleep(1000);
-            System.out.println("run");
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        for (int i = 0; i < 10; i++) {
+//            System.out.println(Thread.currentThread() + " " + threadName + " : " + i);
+//        }
+        System.out.println(Thread.currentThread() + "\t" + threadName + "\t" + somethingVO.getValue());
+
     }
 }
