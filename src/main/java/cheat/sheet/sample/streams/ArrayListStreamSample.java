@@ -2,17 +2,20 @@ package cheat.sheet.sample.streams;
 
 import lombok.Getter;
 import lombok.Setter;
+import lombok.ToString;
 import org.apache.commons.lang3.time.StopWatch;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.OptionalDouble;
+import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
 
 @Getter
 @Setter
+@ToString
 class Something {
 
     private String name;
@@ -56,6 +59,13 @@ public class ArrayListStreamSample {
 
         double femaleSum = somethings.stream().filter(n -> n.getSex().equals(Sex.FEMALE)).mapToDouble(Something::getAge).sum();
         System.out.println("femaleSum = " + femaleSum);
+        System.out.println("====================================================");
+
+        Stream<Something> sss = somethings.stream().filter(s -> s.getSex().equals(Sex.MALE));
+        sss.forEach(something -> {
+            System.out.println("something = " + something);
+        });
+
 
 
     }
