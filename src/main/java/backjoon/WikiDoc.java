@@ -1,4 +1,4 @@
-package cheat.sheet.sample.test.real_test;
+package backjoon;
 
 import java.util.*;
 import java.util.stream.Collectors;

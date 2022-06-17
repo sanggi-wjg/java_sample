@@ -13,6 +13,8 @@ public class StringSampleMain {
         sample.basic_2();
         System.out.println("####################################");
 
+        sample.stringFormat();
+        System.out.println("####################################");
     }
 
 

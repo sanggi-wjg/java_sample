@@ -1,5 +1,7 @@
 package cheat.sheet.sample.string;
 
+import java.text.MessageFormat;
+
 public class StringSample {
 
     public void basic_1() {
@@ -35,5 +37,10 @@ public class StringSample {
 
         String str = builder.toString();
 //        System.out.println(str);
+    }
+
+    public void stringFormat() {
+        String text = MessageFormat.format("This is text ''{0}''", "쿠쿠루삥뽕");
+        System.out.println("text = " + text);
     }
 }
