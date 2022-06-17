@@ -1,9 +1,6 @@
 package cheat.sheet.sample.collectionss;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
+import java.util.*;
 
 public class CollectionSample {
 
@@ -30,6 +27,17 @@ public class CollectionSample {
         list.clear();
         System.out.println(list);
         System.out.println(list.isEmpty());
+
+        list.add(1);
+        list.add(2);
+        list.add(3);
+
+        Optional<Integer> max = list.stream().max(Integer::compareTo);
+        System.out.println("max = " + max);
+
+        list.clear();
+        Integer maxAfterClear = list.stream().max(Integer::compareTo).orElseThrow(NoSuchElementException::new);
+        System.out.println("maxAfterClear = " + maxAfterClear);
     }
 
     public void show_map() {
